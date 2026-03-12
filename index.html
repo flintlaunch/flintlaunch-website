@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FlintLaunch — AI Lab &amp; Development Portfolio</title>
-  <meta name="description" content="FlintLaunch is Kenneth's AI lab. Building niche automation businesses using AI — content pipelines, data tools, and real estate intelligence." />
+  <title>FlintLaunch — AI Lab &amp; Builder Portfolio</title>
+  <meta name="description" content="FlintLaunch is Kenneth's AI lab. I find underserved niches, build automated AI pipelines around them, and turn the output into real businesses." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="FlintLaunch — AI Lab &amp; Builder Portfolio" />
+  <meta property="og:description" content="I find underserved niches, build automated AI pipelines around them, and turn the output into real businesses." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://flintlaunch.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FlintLaunch — AI Lab &amp; Builder Portfolio" />
+  <meta name="twitter:description" content="I find underserved niches, build automated AI pipelines around them, and turn the output into real businesses." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -555,6 +563,21 @@
     .tl-out    { color: var(--text-muted); padding-left: 24px; margin-bottom: 4px; }
     .tl-blank  { height: 12px; }
 
+    .tl-cursor {
+      display: inline-block;
+      width: 8px;
+      height: 14px;
+      background: var(--accent);
+      margin-left: 2px;
+      vertical-align: middle;
+      animation: blink 1.1s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
     /* ─── Contact ───────────────────────────────────────────── */
     #contact {
       background: var(--bg-card);
@@ -693,22 +716,22 @@
       <h1 class="hero-title">
         <span class="brand">FlintLaunch</span>
       </h1>
-      <p class="hero-tagline">Building AI-powered businesses from scratch — automation pipelines, data tools, and intelligence products.</p>
+      <p class="hero-tagline">I find niches that AI hasn't touched yet, build automated pipelines around them, and turn the output into real businesses — solo, from scratch.</p>
       <div class="hero-meta">
         <span>Kenneth</span>
         <span class="dot"></span>
         <span>Brea, California</span>
         <span class="dot"></span>
-        <span>AI Builder</span>
+        <span>Building in public</span>
       </div>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">
           <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
             <path d="M2 8h12M8 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          View Projects
+          See What I'm Building
         </a>
-        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        <a href="#contact" class="btn btn-secondary">Work Together</a>
       </div>
     </div>
   </section>
@@ -762,7 +785,7 @@
           <div class="project-icon">📡</div>
           <div class="project-status active">Active</div>
           <h3 class="project-name">WARN Content Engine</h3>
-          <p class="project-desc">Automated pipeline that scrapes WARN Act layoff filings from 5 state government websites daily, generates social content via AI, and queues it for review — then posts to Instagram, TikTok, and X.</p>
+          <p class="project-desc">Layoffs are public record. Every day, companies file WARN Act notices with state governments — and almost no one is watching. This pipeline scrapes 5 states daily, runs each filing through AI to generate video scripts, captions, and posts, then queues everything for one-click publishing to Instagram, TikTok, and X.</p>
           <div class="project-tags">
             <span class="tag">Node.js</span>
             <span class="tag">SQLite</span>
@@ -777,7 +800,7 @@
           <div class="project-icon">🏠</div>
           <div class="project-status active">Active</div>
           <h3 class="project-name">AI Property Intelligence</h3>
-          <p class="project-desc">Upload listing photos, get an AI-generated property analysis report. Identifies rooms, renovation needs, red flags, and investment signals. Built for real estate investors who need fast due diligence.</p>
+          <p class="project-desc">Real estate investors spend hours manually reviewing listing photos — looking for red flags, renovation scope, and deal signals. This tool cuts that to seconds. Upload photos, get a structured AI report: room-by-room condition, renovation urgency, investment score, and actionable next steps. Powered by Gemini Vision.</p>
           <div class="project-tags">
             <span class="tag">Gemini Vision</span>
             <span class="tag">Express</span>
@@ -789,8 +812,8 @@
 
         <!-- Placeholder -->
         <div class="project-card placeholder">
-          <div class="placeholder-icon">🔬</div>
-          <p class="placeholder-text">More building in progress.<br>Check back soon.</p>
+          <div class="placeholder-icon">⚗️</div>
+          <p class="placeholder-text">Next experiment<br>in progress.</p>
         </div>
 
       </div>
@@ -861,6 +884,8 @@
             <div class="tl"><span class="tl-prompt">$</span><span class="tl-cmd">npm run post</span></div>
             <div class="tl-out">✓ Posted to Instagram, TikTok, X</div>
             <div class="tl-out"><span style="color: #4ade80;">All systems operational.</span></div>
+            <div class="tl-blank"></div>
+            <div class="tl"><span class="tl-prompt">$</span><span class="tl-cmd"> <span class="tl-cursor"></span></span></div>
           </div>
         </div>
       </div>
@@ -871,24 +896,24 @@
   <section id="contact">
     <div class="container">
       <div class="contact-card">
-        <p class="section-label">Contact</p>
-        <h2 class="section-title">Let's connect</h2>
-        <p>Building something interesting? Have a project in a niche you think is underserved by AI? I'm always up for a conversation.</p>
+        <p class="section-label">Let's Talk</p>
+        <h2 class="section-title">Got a niche that's<br>begging for automation?</h2>
+        <p>If you're sitting on a dataset, a workflow, or an industry vertical that AI hasn't gotten to yet — I want to hear about it. I'm also open to partnerships, consulting, and early conversations about problems worth building on.</p>
         <div class="contact-links">
-          <a href="https://github.com/kenneth-flintlaunch" class="contact-link" target="_blank" rel="noopener">
+          <a href="https://github.com/flintlaunch" class="contact-link" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
             </svg>
-            GitHub
+            Follow on GitHub
           </a>
           <a href="mailto:kenneth@flintlaunch.com" class="contact-link">
             <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
               <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            Email
+            Send an Email
           </a>
         </div>
-        <p class="contact-email">Or reach out directly at <a href="mailto:kenneth@flintlaunch.com">kenneth@flintlaunch.com</a></p>
+        <p class="contact-email">Drop a line: <a href="mailto:kenneth@flintlaunch.com">kenneth@flintlaunch.com</a></p>
       </div>
     </div>
   </section>
@@ -902,30 +927,44 @@
   </footer>
 
   <script>
-    // Smooth nav background on scroll
+    // Nav opacity on scroll
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
       nav.style.background = window.scrollY > 40
         ? 'rgba(10,11,14,0.97)'
         : 'rgba(10,11,14,0.85)';
-    });
+    }, { passive: true });
 
-    // Fade-in sections on scroll
+    // Staggered fade-in for sections and cards
+    const fadeTargets = [
+      ...document.querySelectorAll('section'),
+      ...document.querySelectorAll('.project-card'),
+      ...document.querySelectorAll('.principle'),
+      ...document.querySelectorAll('.stat-card'),
+    ];
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'translateY(0)';
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
 
-    document.querySelectorAll('section').forEach(s => {
-      s.style.opacity = '0';
-      s.style.transform = 'translateY(20px)';
-      s.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(s);
+    fadeTargets.forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = `opacity 0.55s ease ${(i % 4) * 80}ms, transform 0.55s ease ${(i % 4) * 80}ms`;
+      observer.observe(el);
     });
+
+    document.addEventListener('animationend', () => {}, false);
+
+    // Add .visible class handler via CSS trick
+    const style = document.createElement('style');
+    style.textContent = '.visible { opacity: 1 !important; transform: translateY(0) !important; }';
+    document.head.appendChild(style);
   </script>
 
 </body>
