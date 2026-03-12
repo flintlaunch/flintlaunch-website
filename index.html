@@ -322,37 +322,71 @@
       font-weight: 500;
     }
 
-    /* ─── Projects ──────────────────────────────────────────── */
+    /* ─── Focus Areas ───────────────────────────────────────── */
     #projects { background: var(--bg-card); }
 
-    .projects-coming-soon {
-      display: flex;
-      justify-content: center;
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
     }
 
-    .coming-soon-card {
+    .focus-card {
       background: var(--bg);
-      border: 1px dashed rgba(0,229,255,0.2);
+      border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 64px 48px;
+      padding: 28px 24px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      max-width: 480px;
-      width: 100%;
+      gap: 12px;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
     }
 
-    .coming-soon-icon {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      opacity: 0.5;
+    .focus-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top left, var(--accent-dim), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
     }
 
-    .coming-soon-text {
-      font-size: 1.0625rem;
-      color: var(--text-dim);
-      line-height: 1.65;
+    .focus-card:hover::after { opacity: 1; }
+
+    .focus-card:hover {
+      border-color: rgba(0,229,255,0.18);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    }
+
+    .focus-icon {
+      font-size: 1.75rem;
+      line-height: 1;
+    }
+
+    .focus-name {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    .focus-desc {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    @media (max-width: 900px) {
+      .focus-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 500px) {
+      .focus-grid { grid-template-columns: 1fr; }
     }
 
     /* ─── Lab ───────────────────────────────────────────────── */
@@ -589,7 +623,7 @@
       <a href="#hero" class="nav-logo">FlintLaunch<span>.io</span></a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#projects">What I Build</a></li>
         <li><a href="#lab">Lab</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -659,25 +693,64 @@
     </div>
   </section>
 
-  <!-- ─── Projects ──────────────────────────────────────────── -->
+  <!-- ─── Focus Areas ──────────────────────────────────────── -->
   <section id="projects">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Projects</p>
-        <h2 class="section-title">Building in stealth.</h2>
-        <p class="section-sub">Projects are in active development. Details coming soon — follow along on GitHub to see what ships.</p>
+        <p class="section-label">What I Build</p>
+        <h2 class="section-title">The lab's focus areas.</h2>
+        <p class="section-sub">Every project lives in one of these verticals — where automation compounds, niches are underserved, and AI creates an unfair advantage.</p>
       </div>
-      <div class="projects-coming-soon">
-        <div class="coming-soon-card">
-          <div class="coming-soon-icon">⚗️</div>
-          <p class="coming-soon-text">Projects launching soon — follow along to see what's being built.</p>
-          <a href="https://github.com/flintlaunch" class="btn btn-secondary" target="_blank" rel="noopener" style="margin-top: 28px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-            </svg>
-            Follow on GitHub
-          </a>
+      <div class="focus-grid">
+
+        <div class="focus-card">
+          <div class="focus-icon">⚙️</div>
+          <h3 class="focus-name">AI Automation &amp; Workflows</h3>
+          <p class="focus-desc">n8n-powered systems that replace manual business processes with autonomous AI pipelines — set once, run forever.</p>
         </div>
+
+        <div class="focus-card">
+          <div class="focus-icon">📣</div>
+          <h3 class="focus-name">AI Content Pipelines</h3>
+          <p class="focus-desc">Automated content generation and multi-platform distribution for niche audiences — at scale, without a content team.</p>
+        </div>
+
+        <div class="focus-card">
+          <div class="focus-icon">🤖</div>
+          <h3 class="focus-name">Agentic AI Systems</h3>
+          <p class="focus-desc">Autonomous agents that own full end-to-end workflows — researching, deciding, and acting without human checkpoints.</p>
+        </div>
+
+        <div class="focus-card">
+          <div class="focus-icon">📊</div>
+          <h3 class="focus-name">Data Intelligence Tools</h3>
+          <p class="focus-desc">Turning raw, messy, or overlooked public data into actionable business signals using AI analysis and structured outputs.</p>
+        </div>
+
+        <div class="focus-card">
+          <div class="focus-icon">🎯</div>
+          <h3 class="focus-name">Niche AI Products</h3>
+          <p class="focus-desc">Vertical-specific tools built to solve one industry problem exceptionally well — deep value in a narrow market.</p>
+        </div>
+
+        <div class="focus-card">
+          <div class="focus-icon">🧠</div>
+          <h3 class="focus-name">GEO / LLM SEO</h3>
+          <p class="focus-desc">Helping brands get discovered and cited inside AI tools like ChatGPT, Claude, and Perplexity — the next frontier of search.</p>
+        </div>
+
+        <div class="focus-card">
+          <div class="focus-icon">🔍</div>
+          <h3 class="focus-name">AI Lead Generation</h3>
+          <p class="focus-desc">AI agents that identify, qualify, and engage prospects automatically at scale — outbound that runs while you sleep.</p>
+        </div>
+
+        <div class="focus-card">
+          <div class="focus-icon">📡</div>
+          <h3 class="focus-name">Niche Audience Automation</h3>
+          <p class="focus-desc">Systems that find, grow, and monetize hyper-specific audiences — from data sourcing to content to community, automated end-to-end.</p>
+        </div>
+
       </div>
     </div>
   </section>
