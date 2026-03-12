@@ -25,10 +25,12 @@
       --bg-card2:    #141e30;
       --border:      #1f2937;
       --border2:     #2a3a52;
-      --accent:      #3b82f6;
-      --accent-2:    #6366f1;
-      --accent-dim:  rgba(59,130,246,0.1);
-      --accent-glow: rgba(59,130,246,0.28);
+      --gold:        #F5A623;
+      --gold-dark:   #d4891a;
+      --gold-dim:    rgba(245,166,35,0.09);
+      --gold-glow:   rgba(245,166,35,0.22);
+      --blue:        #3b82f6;
+      --blue-dim:    rgba(59,130,246,0.09);
       --text:        #f9fafb;
       --text-dim:    #d1d5db;
       --text-muted:  #9ca3af;
@@ -81,7 +83,7 @@
 
     .nav-logo em {
       font-style: normal;
-      color: var(--accent);
+      color: var(--gold);
     }
 
     .nav-links { display: flex; gap: 36px; list-style: none; }
@@ -112,15 +114,15 @@
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
+      background: var(--gold);
+      color: #0a0f1e;
+      border-color: var(--gold);
     }
 
     .btn-primary:hover {
-      background: #5b9bff;
-      border-color: #5b9bff;
-      box-shadow: 0 0 30px var(--accent-glow);
+      background: #f7b84b;
+      border-color: #f7b84b;
+      box-shadow: 0 0 30px var(--gold-glow);
       transform: translateY(-1px);
     }
 
@@ -142,7 +144,7 @@
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.6875rem;
       font-weight: 600;
-      color: var(--accent);
+      color: var(--gold);
       letter-spacing: 0.16em;
       text-transform: uppercase;
       margin-bottom: 16px;
@@ -168,7 +170,7 @@
     .divider {
       width: 40px;
       height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
       border-radius: 2px;
       margin: 20px 0;
     }
@@ -201,8 +203,8 @@
       width: 800px;
       height: 640px;
       background: radial-gradient(ellipse,
-        rgba(59,130,246,0.11) 0%,
-        rgba(99,102,241,0.07) 35%,
+        rgba(245,166,35,0.08) 0%,
+        rgba(212,137,26,0.04) 40%,
         transparent 70%);
       pointer-events: none;
     }
@@ -215,9 +217,9 @@
       gap: 9px;
       font-size: 0.8125rem;
       font-weight: 500;
-      color: var(--accent);
-      background: rgba(59,130,246,0.08);
-      border: 1px solid rgba(59,130,246,0.2);
+      color: var(--gold);
+      background: rgba(245,166,35,0.08);
+      border: 1px solid rgba(245,166,35,0.22);
       padding: 7px 16px;
       border-radius: 100px;
       margin-bottom: 32px;
@@ -226,7 +228,7 @@
     .badge-dot {
       width: 6px;
       height: 6px;
-      background: var(--accent);
+      background: var(--gold);
       border-radius: 50%;
       animation: pulse 2s ease-in-out infinite;
     }
@@ -242,7 +244,7 @@
       line-height: 1.0;
       letter-spacing: -0.04em;
       margin-bottom: 24px;
-      background: linear-gradient(135deg, #ffffff 25%, #93c5fd 75%, #a5b4fc 100%);
+      background: linear-gradient(135deg, #ffffff 30%, #fde68a 70%, #F5A623 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -311,7 +313,7 @@
     }
 
     .stat-card:hover {
-      border-color: rgba(59,130,246,0.22);
+      border-color: rgba(245,166,35,0.28);
       transform: translateY(-2px);
     }
 
@@ -322,7 +324,7 @@
       letter-spacing: -0.03em;
       line-height: 1;
       margin-bottom: 8px;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -365,7 +367,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at top left, rgba(59,130,246,0.09), transparent 65%);
+      background: radial-gradient(ellipse at top left, rgba(245,166,35,0.07), transparent 65%);
       opacity: 0;
       transition: opacity 0.3s;
       pointer-events: none;
@@ -374,7 +376,7 @@
     .focus-card:hover::after { opacity: 1; }
 
     .focus-card:hover {
-      border-color: rgba(59,130,246,0.24);
+      border-color: rgba(245,166,35,0.22);
       transform: translateY(-3px);
       box-shadow: 0 16px 48px rgba(0,0,0,0.45);
     }
@@ -384,8 +386,8 @@
       grid-column: span 2;
       padding: 32px 28px;
       min-height: 220px;
-      border-color: rgba(59,130,246,0.16);
-      background: linear-gradient(145deg, #111827 0%, rgba(59,130,246,0.06) 100%);
+      border-color: rgba(245,166,35,0.16);
+      background: linear-gradient(145deg, #111827 0%, rgba(245,166,35,0.04) 100%);
     }
 
     .focus-card.t1::before {
@@ -393,12 +395,12 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent) 40%, var(--accent-2) 60%, transparent);
+      background: linear-gradient(90deg, transparent, var(--gold) 40%, var(--gold-dark) 60%, transparent);
     }
 
     .focus-card.t1:hover {
-      border-color: rgba(59,130,246,0.38);
-      box-shadow: 0 20px 64px rgba(0,0,0,0.5), 0 0 48px rgba(59,130,246,0.09);
+      border-color: rgba(245,166,35,0.38);
+      box-shadow: 0 20px 64px rgba(0,0,0,0.5), 0 0 48px rgba(245,166,35,0.1);
     }
 
     /* T2 — Secondary */
@@ -470,13 +472,13 @@
       transition: border-color 0.22s;
     }
 
-    .principle:hover { border-color: rgba(59,130,246,0.2); }
+    .principle:hover { border-color: rgba(245,166,35,0.22); }
 
     .principle-num {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.75rem;
       font-weight: 700;
-      color: var(--accent);
+      color: var(--gold);
       min-width: 24px;
       padding-top: 3px;
       letter-spacing: 0.04em;
@@ -510,7 +512,7 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent), var(--accent-2), transparent);
+      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-dark), transparent);
     }
 
     .pipeline-label {
@@ -598,7 +600,7 @@
 
     .p-chip.running {
       background: rgba(59,130,246,0.1);
-      color: var(--accent);
+      color: var(--blue);
       border: 1px solid rgba(59,130,246,0.22);
       animation: chipPulse 2s ease-in-out infinite;
     }
@@ -670,7 +672,7 @@
       color: #4b5563;
     }
 
-    .connect-note a { color: var(--accent); transition: opacity 0.2s; }
+    .connect-note a { color: var(--gold); transition: opacity 0.2s; }
     .connect-note a:hover { opacity: 0.75; }
 
     /* ─── Footer ─────────────────────────────────────────────── */
@@ -750,7 +752,7 @@
           Founder · FlintLaunch
         </div>
         <h1 class="hero-title">AI Venture Builder.</h1>
-        <p class="hero-sub">I build <strong>automated AI-powered businesses from scratch</strong> — and help companies do the same.</p>
+        <p class="hero-sub">I build businesses that run on AI — and I've been doing it since before most people knew what to call it.</p>
         <div class="hero-meta">
           <span>Kenneth Tow</span>
           <span class="dot"></span>
@@ -776,7 +778,7 @@
           <div class="divider"></div>
           <p>I'm <strong>Kenneth</strong>, based in Los Angeles. I started FlintLaunch as an AI lab with one goal — move fast, build real things, and figure out what actually works.</p>
           <p>I don't theorize about AI. <strong>I ship it.</strong> Every project starts at zero and has to earn its place in the portfolio. No vaporware. No slide decks that never become products.</p>
-          <p>Whether I'm building for myself or for a client, the approach is the same: <strong>find the leverage point, automate it, and make it run without me.</strong></p>
+          <p>Whether I'm building for myself or a client, the approach is the same: find what a person does manually every day, replace it with a system, and make sure it keeps running while I sleep.</p>
         </div>
         <div class="about-stats">
           <div class="stat-card fade-up">
@@ -805,8 +807,8 @@
     <div class="container">
       <div class="section-header">
         <p class="section-label">Work With Me</p>
-        <h2 class="section-title">How I help companies win with AI.</h2>
-        <p class="section-sub">Whether you need a system built, a process automated, or a strategy for getting ahead of AI — I work with a small number of companies at a time to make it happen.</p>
+        <h2 class="section-title">What I actually build for companies.</h2>
+        <p class="section-sub">I take on a small number of engagements at a time. No strategy docs that live in Notion. Working systems that run in production.</p>
       </div>
       <div class="focus-grid">
 
@@ -814,51 +816,51 @@
         <div class="focus-card t1 fade-up">
           <div class="focus-icon">🧠</div>
           <h3 class="focus-name">GEO &amp; LLM Visibility</h3>
-          <p class="focus-desc">Get your brand cited inside ChatGPT, Claude, and Perplexity. The next frontier of search is here — I build the content strategy and technical infrastructure to get you there first.</p>
+          <p class="focus-desc">Most companies are still fighting for Google rankings while AI systems are already answering the questions their customers are asking. I build the content strategy and technical infrastructure to get your brand cited inside ChatGPT, Claude, and Perplexity — before your competitors figure out it's even a thing.</p>
         </div>
 
         <div class="focus-card t1 fade-up">
           <div class="focus-icon">⚙️</div>
           <h3 class="focus-name">AI Automation &amp; Workflows</h3>
-          <p class="focus-desc">Replace manual processes with autonomous AI pipelines that run without you. Built to run in production — not just in demos.</p>
+          <p class="focus-desc">I find what your team does manually every day, build an AI pipeline to replace it, and make sure it's still running six months later. Not demos. Not pilots. Production systems.</p>
         </div>
 
         <div class="focus-card t1 fade-up">
           <div class="focus-icon">🤖</div>
           <h3 class="focus-name">Agentic AI Systems</h3>
-          <p class="focus-desc">AI agents that plan, execute, and deliver end-to-end — no babysitting required. From research loops to multi-step decision pipelines.</p>
+          <p class="focus-desc">Not chatbots. Not copilots. Agents that receive a task, figure out how to complete it, and come back with a result. Research loops, decision pipelines, multi-step workflows that don't need a human in the middle.</p>
         </div>
 
         <!-- Tier 2 — Secondary -->
         <div class="focus-card t2 fade-up">
           <div class="focus-icon">📣</div>
           <h3 class="focus-name">AI Content Pipelines</h3>
-          <p class="focus-desc">Automated content generation and distribution built for niche audiences at scale. Produce without a content team.</p>
+          <p class="focus-desc">I build the infrastructure that produces and distributes content at volume — scrapers, AI generation, scheduling, posting. You pick the niche. The pipeline runs without a content team.</p>
         </div>
 
         <div class="focus-card t2 fade-up">
           <div class="focus-icon">🎯</div>
           <h3 class="focus-name">Niche AI Products</h3>
-          <p class="focus-desc">Purpose-built AI tools designed to dominate one specific industry problem. Deeper value, less competition, faster adoption.</p>
+          <p class="focus-desc">Tight tools for specific industries. Not horizontal platforms trying to be everything. One problem, solved completely — with AI baked in from the start, not bolted on.</p>
         </div>
 
         <!-- Tier 3 — Supporting -->
         <div class="focus-card t3 fade-up">
           <div class="focus-icon">📊</div>
           <h3 class="focus-name">Data Intelligence</h3>
-          <p class="focus-desc">Turn raw data into decisions using AI analysis and automated reporting.</p>
+          <p class="focus-desc">Raw data is noise until something reads it. I build the layer that turns your data into a signal — automated analysis, pattern detection, reporting that writes itself.</p>
         </div>
 
         <div class="focus-card t3 fade-up">
           <div class="focus-icon">🔍</div>
           <h3 class="focus-name">AI Lead Generation</h3>
-          <p class="focus-desc">Identify, qualify, and engage prospects automatically using AI agents.</p>
+          <p class="focus-desc">Agents that find the right people, filter for fit, and reach out — without a human touching each step. SDR work at scale, without an SDR.</p>
         </div>
 
         <div class="focus-card t3 fade-up">
           <div class="focus-icon">📡</div>
           <h3 class="focus-name">Audience Automation</h3>
-          <p class="focus-desc">Find, grow, and monetize hyper-specific audiences on autopilot.</p>
+          <p class="focus-desc">Pick the niche, build the pipeline, grow it automatically. Niche audiences are undervalued and underserved — that's the opportunity.</p>
         </div>
 
       </div>
@@ -874,7 +876,7 @@
           <div class="section-header" style="margin-bottom: 32px;">
             <p class="section-label">The Lab</p>
             <h2 class="section-title">Build in public.<br>Ship fast.<br>Learn faster.</h2>
-            <p class="section-sub">FlintLaunch is where I document what I'm building, what breaks, and what actually works. No fluff. No vaporware. Just real builds, real lessons, and the occasional breakthrough.</p>
+            <p class="section-sub">FlintLaunch is where I keep score. What shipped, what broke, what I'd build differently. No fluff, no vaporware — just real builds and the lessons that come with them.</p>
           </div>
           <div class="lab-principles">
             <div class="principle fade-up">
@@ -962,7 +964,7 @@
       <div class="connect-inner">
         <p class="section-label">Connect</p>
         <h2 class="section-title">Let's build something.</h2>
-        <p class="connect-body">I work with a small number of companies and collaborators at a time. If you're thinking about what AI can do for your business — let's talk.</p>
+        <p class="connect-body">I keep my client list short on purpose. I'd rather go deep on two engagements than spread thin across ten. If you're serious about building something with AI — not just talking about it — reach out.</p>
         <div class="connect-actions">
           <a href="https://www.linkedin.com/in/kennethtow/" class="btn-linkedin" target="_blank" rel="noopener">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
