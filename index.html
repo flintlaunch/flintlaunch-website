@@ -325,145 +325,34 @@
     /* ─── Projects ──────────────────────────────────────────── */
     #projects { background: var(--bg-card); }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    .projects-coming-soon {
+      display: flex;
+      justify-content: center;
     }
 
-    .project-card {
+    .coming-soon-card {
       background: var(--bg);
-      border: 1px solid var(--border);
+      border: 1px dashed rgba(0,229,255,0.2);
       border-radius: var(--radius-lg);
-      padding: 32px;
+      padding: 64px 48px;
       display: flex;
       flex-direction: column;
-      gap: 0;
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .project-card:hover::before { opacity: 1; }
-
-    .project-card:hover {
-      border-color: rgba(0,229,255,0.2);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-    }
-
-    .project-card.placeholder {
-      border-style: dashed;
-      justify-content: center;
       align-items: center;
       text-align: center;
-      min-height: 280px;
+      max-width: 480px;
+      width: 100%;
     }
 
-    .project-card.placeholder:hover {
-      border-color: rgba(0,229,255,0.3);
-      transform: none;
-      box-shadow: none;
+    .coming-soon-icon {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      opacity: 0.5;
     }
 
-    .project-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: var(--accent-dim);
-      border: 1px solid rgba(0,229,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 24px;
-    }
-
-    .project-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 100px;
-      margin-bottom: 16px;
-      width: fit-content;
-    }
-
-    .project-status.active {
-      background: rgba(34,197,94,0.12);
-      color: #4ade80;
-      border: 1px solid rgba(34,197,94,0.2);
-    }
-
-    .project-status.active::before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      background: #4ade80;
-      border-radius: 50%;
-    }
-
-    .project-status.building {
-      background: rgba(251,191,36,0.1);
-      color: #fbbf24;
-      border: 1px solid rgba(251,191,36,0.2);
-    }
-
-    .project-name {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-
-    .project-desc {
-      font-size: 0.9375rem;
+    .coming-soon-text {
+      font-size: 1.0625rem;
       color: var(--text-dim);
       line-height: 1.65;
-      flex: 1;
-      margin-bottom: 28px;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 4px 10px;
-      border-radius: 6px;
-      letter-spacing: 0.04em;
-    }
-
-    .placeholder-icon {
-      font-size: 2rem;
-      margin-bottom: 16px;
-      opacity: 0.4;
-    }
-
-    .placeholder-text {
-      color: var(--text-muted);
-      font-size: 0.9375rem;
-      font-weight: 500;
     }
 
     /* ─── Lab ───────────────────────────────────────────────── */
@@ -775,47 +664,20 @@
     <div class="container">
       <div class="section-header">
         <p class="section-label">Projects</p>
-        <h2 class="section-title">What I'm building</h2>
-        <p class="section-sub">Each project is a real business — scrapers running, AI generating, pipelines automating.</p>
+        <h2 class="section-title">Building in stealth.</h2>
+        <p class="section-sub">Projects are in active development. Details coming soon — follow along on GitHub to see what ships.</p>
       </div>
-      <div class="projects-grid">
-
-        <!-- WARN Content Engine -->
-        <div class="project-card">
-          <div class="project-icon">📡</div>
-          <div class="project-status active">Active</div>
-          <h3 class="project-name">WARN Content Engine</h3>
-          <p class="project-desc">Layoffs are public record. Every day, companies file WARN Act notices with state governments — and almost no one is watching. This pipeline scrapes 5 states daily, runs each filing through AI to generate video scripts, captions, and posts, then queues everything for one-click publishing to Instagram, TikTok, and X.</p>
-          <div class="project-tags">
-            <span class="tag">Node.js</span>
-            <span class="tag">SQLite</span>
-            <span class="tag">n8n</span>
-            <span class="tag">OpenRouter</span>
-            <span class="tag">React</span>
-          </div>
+      <div class="projects-coming-soon">
+        <div class="coming-soon-card">
+          <div class="coming-soon-icon">⚗️</div>
+          <p class="coming-soon-text">Projects launching soon — follow along to see what's being built.</p>
+          <a href="https://github.com/flintlaunch" class="btn btn-secondary" target="_blank" rel="noopener" style="margin-top: 28px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            Follow on GitHub
+          </a>
         </div>
-
-        <!-- AI Property Intelligence -->
-        <div class="project-card">
-          <div class="project-icon">🏠</div>
-          <div class="project-status active">Active</div>
-          <h3 class="project-name">AI Property Intelligence</h3>
-          <p class="project-desc">Real estate investors spend hours manually reviewing listing photos — looking for red flags, renovation scope, and deal signals. This tool cuts that to seconds. Upload photos, get a structured AI report: room-by-room condition, renovation urgency, investment score, and actionable next steps. Powered by Gemini Vision.</p>
-          <div class="project-tags">
-            <span class="tag">Gemini Vision</span>
-            <span class="tag">Express</span>
-            <span class="tag">React</span>
-            <span class="tag">jsPDF</span>
-            <span class="tag">SQLite</span>
-          </div>
-        </div>
-
-        <!-- Placeholder -->
-        <div class="project-card placeholder">
-          <div class="placeholder-icon">⚗️</div>
-          <p class="placeholder-text">Next experiment<br>in progress.</p>
-        </div>
-
       </div>
     </div>
   </section>
