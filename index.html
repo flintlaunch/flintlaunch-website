@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flint Launch — AI that works while you sleep</title>
+<meta name="description" content="Flint Launch is a boutique AI lab building automation workflows, LLM visibility infrastructure, and intelligent tools for founders who move fast.">
+<meta property="og:title" content="Flint Launch — AI that works while you sleep">
+<meta property="og:description" content="Boutique AI lab. Automation workflows, LLM visibility, agentic systems. Built for founders who move fast.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flintlaunch.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Flint Launch — AI that works while you sleep">
+<meta name="twitter:description" content="Boutique AI lab. Automation workflows, LLM visibility, agentic systems.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -36,6 +45,15 @@ html { scroll-behavior: smooth; }
   --radius-btn: 9px;
   --radius-card: 10px;
   --radius-pill: 20px;
+  /* ─── Z-INDEX SCALE ─── */
+  --z-skip:    600;
+  --z-progress: 500;
+  --z-cursor:   400;
+  --z-cursor-r: 399;
+  --z-noise:    300;
+  --z-nav:      200;
+  --z-card:     10;
+  --z-base:     1;
 }
 
 body {
@@ -50,7 +68,7 @@ body {
 body::before {
   content: '';
   position: fixed; inset: 0;
-  z-index: 9996; pointer-events: none;
+  z-index: var(--z-noise); pointer-events: none;
   opacity: 0.032;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 160px 160px;
@@ -61,7 +79,7 @@ body::before {
   position: fixed; top: 0; left: 0;
   height: 1.5px; width: 0;
   background: var(--gold);
-  z-index: 10000; pointer-events: none;
+  z-index: var(--z-progress); pointer-events: none;
   box-shadow: 0 0 10px var(--gold-glow);
   transition: width 0.08s linear;
 }
@@ -72,7 +90,7 @@ body::before {
   background: var(--gold);
   border-radius: 50%;
   position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 9999;
+  pointer-events: none; z-index: var(--z-cursor);
   transform: translate(-50%,-50%);
   mix-blend-mode: screen;
   transition: width .18s, height .18s, opacity .2s, background .2s;
@@ -82,7 +100,7 @@ body::before {
   border: 1px solid rgba(201,168,76,0.5);
   border-radius: 50%;
   position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 9998;
+  pointer-events: none; z-index: var(--z-cursor-r);
   transform: translate(-50%,-50%);
   transition: width .3s, height .3s, border-color .3s, opacity .3s;
 }
@@ -162,6 +180,7 @@ body::before {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600; line-height: 1.05;
+  text-wrap: balance;
 }
 .section-h2 em { font-style: italic; }
 .dk .section-h2    { color: var(--cream); }
@@ -192,6 +211,11 @@ body::before {
   transition: opacity 0.3s;
 }
 .btn:active::after, .btn-ghost:active::after, .btn-gold:active::after { opacity: 1; }
+/* Physical press feedback */
+.btn:active, .btn-ghost-dk:active, .btn-ghost-lt:active,
+.btn-cream:active, .btn-gold:active, .nav-cta:active {
+  transform: translateY(1px) scale(0.98);
+}
 
 .btn-cream  { background: var(--cream); color: var(--dark); }
 .btn-cream:hover { box-shadow: 0 0 24px rgba(240,236,216,.25); }
@@ -227,7 +251,7 @@ nav {
   border-bottom: 1px solid rgba(201,168,76,.1);
   transition: box-shadow 0.3s;
 }
-nav.scrolled { box-shadow: 0 4px 40px rgba(0,0,0,.2); }
+nav.scrolled { box-shadow: 0 4px 40px rgba(20,22,10,.45); }
 .nav-logo {
   font-family: var(--font-serif);
   font-size: 1.35rem; font-weight: 600;
@@ -265,7 +289,7 @@ nav.scrolled { box-shadow: 0 4px 40px rgba(0,0,0,.2); }
 
 /* ─── HERO ─── */
 .hero {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex; align-items: center;
   padding: 9rem 3.5rem 5rem;
   position: relative; z-index: 1;
@@ -319,6 +343,7 @@ nav.scrolled { box-shadow: 0 4px 40px rgba(0,0,0,.2); }
   letter-spacing: -0.015em;
   color: var(--cream);
   margin-bottom: 1.2rem;
+  text-wrap: balance;
 }
 .hero h1 em { font-style: italic; color: var(--gold-light); }
 .hero h1 .stroke {
@@ -553,6 +578,7 @@ nav.scrolled { box-shadow: 0 4px 40px rgba(0,0,0,.2); }
   font-size: 2.6rem; font-weight: 600;
   color: var(--gold-light); line-height: 1; margin-bottom: 0.3rem;
   transition: color .3s;
+  font-variant-numeric: tabular-nums;
 }
 .stat:hover .stat-n { color: var(--gold); }
 .stat-l { font-size: 0.54rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(240,236,216,.32); }
@@ -630,7 +656,7 @@ footer {
 
 /* ─── SKIP LINK ─── */
 .skip-link {
-  position: absolute; top: -100%; left: 1rem; z-index: 10001;
+  position: absolute; top: -100%; left: 1rem; z-index: var(--z-skip);
   background: var(--gold); color: var(--dark);
   padding: 0.5rem 1.1rem; border-radius: var(--radius-btn);
   font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600;
@@ -694,7 +720,7 @@ button:focus-visible,
 
 <!-- ─── NAV ─── -->
 <nav id="nav">
-  <a class="nav-logo" href="#">Flint<em>Launch</em></a>
+  <a class="nav-logo" href="#home">Flint<em>Launch</em></a>
   <div class="nav-links">
     <a href="#services" data-section="services">Services</a>
     <a href="#about" data-section="about">About</a>
@@ -708,6 +734,7 @@ button:focus-visible,
   </div>
 </nav>
 
+<main id="main-content">
 <!-- ─── HERO ─── -->
 <section class="dk hero" id="home" aria-label="Hero">
   <div class="hero-top-bar"></div>
@@ -929,6 +956,8 @@ button:focus-visible,
   </div>
 </section>
 
+</main>
+
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="foot-logo">Flint<em>Launch</em></div>
@@ -940,7 +969,11 @@ button:focus-visible,
     </a>
     <a href="mailto:flintlaunch.ai@gmail.com">flintlaunch.ai@gmail.com</a>
   </div>
-  <div class="foot-copy">© 2025 Flint Launch — All rights reserved</div>
+  <div class="foot-copy">
+    © 2025 Flint Launch —
+    <a href="mailto:flintlaunch.ai@gmail.com" style="color:inherit;text-decoration:none;opacity:.6">Privacy</a>
+    · <a href="mailto:flintlaunch.ai@gmail.com" style="color:inherit;text-decoration:none;opacity:.6">Terms</a>
+  </div>
 </footer>
 
 <script>
